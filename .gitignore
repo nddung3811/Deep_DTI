@@ -1,0 +1,9 @@
+﻿__pycache__/
+*.pyc
+.idea/
+.venv/
+output/
+logs/
+*.pt
+*.pth
+*.ckpt
