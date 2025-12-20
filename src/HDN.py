@@ -15,28 +15,24 @@ class HDNConfig:
     drug_encoding: str = "MPNN"
     target_encoding: str = "CNN"
 
-    # classifier head of DeepPurpose
     cls_hidden_dims: Tuple[int, ...] = (1024, 1024, 512)
 
-    # DeepPurpose training config fields (even if we train outside)
     train_epoch: int = 5
     lr: float = 1e-3
     batch_size: int = 128
 
-    # drug encoder params
     hidden_dim_drug: int = 128
     mpnn_hidden_size: int = 128
     mpnn_depth: int = 3
 
-    # protein encoder params
     cnn_target_filters: Tuple[int, ...] = (32, 64, 96)
     cnn_target_kernels: Tuple[int, ...] = (4, 8, 12)
 
 
 def build_deeppurpose_model(cfg: Optional[HDNConfig] = None):
     """
-    Returns DeepPurpose 'model' object created by dp_models.model_initialize(**config).
-    NOTE: that returned object has `.model` inside (the actual torch module).
+    Tạo model DeepPurpose bằng dp_models.model_initialize(**config).
+    Hàm trả về object của DeepPurpose; module PyTorch thật nằm ở thuộc tính `.model`.
     """
     cfg = cfg or HDNConfig()
     config = dp_utils.generate_config(
@@ -57,7 +53,7 @@ def build_deeppurpose_model(cfg: Optional[HDNConfig] = None):
 
 def get_model(cfg: Optional[HDNConfig] = None):
     """
-    Backward-compatible name you were using:
+    Giữ tên hàm như cũ để tương thích:
       seq_model = get_model().model
     """
     return build_deeppurpose_model(cfg)
@@ -66,12 +62,10 @@ def get_model(cfg: Optional[HDNConfig] = None):
 @torch.no_grad()
 def forward_logits(seq_torch_model: nn.Module, v_d, v_p) -> torch.Tensor:
     """
-    Unify shape:
-      returns (B,) logits.
-    DeepPurpose model usually returns shape (B,1) or (B,).
+    Chuẩn hoá đầu ra về logits dạng (B,).
+    DeepPurpose có thể trả (B,1), (B,) hoặc tuple/list.
     """
     out = seq_torch_model(v_d, v_p)
     if isinstance(out, (tuple, list)):
         out = out[0]
-    out = out.view(-1)
-    return out
+    return out.view(-1)
