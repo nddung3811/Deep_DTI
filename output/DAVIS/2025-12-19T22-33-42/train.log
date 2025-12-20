@@ -1,6 +1,0 @@
-2025-12-19 22:33:42.840 | INFO     | __main__:sample_stat:82 - neg/pos = 23964/1808 | neg%=92.98%
-2025-12-19 22:33:42.854 | INFO     | __main__:sample_stat:82 - neg/pos = 1808/1808 | neg%=50.00%
-2025-12-19 22:33:42.863 | INFO     | __main__:sample_stat:82 - neg/pos = 1260/1271 | neg%=49.78%
-2025-12-19 22:33:42.863 | INFO     | __main__:sample_stat:82 - neg/pos = 185/176 | neg%=51.25%
-2025-12-19 22:33:42.866 | INFO     | __main__:sample_stat:82 - neg/pos = 363/361 | neg%=50.14%
-2025-12-19 22:33:49.584 | INFO     | __main__:run:287 - Start training Teacher-Gated + Distill (Seq student, MIDTI teacher)...
