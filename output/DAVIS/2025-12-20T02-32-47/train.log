@@ -1,0 +1,42 @@
+2025-12-20 02:32:47.598 | INFO     | __main__:sample_stat:86 - neg/pos = 23964/1808 | neg%=92.98%
+2025-12-20 02:32:47.599 | INFO     | __main__:sample_stat:86 - neg/pos = 1808/1808 | neg%=50.00%
+2025-12-20 02:32:47.599 | INFO     | __main__:sample_stat:86 - neg/pos = 1260/1271 | neg%=49.78%
+2025-12-20 02:32:47.599 | INFO     | __main__:sample_stat:86 - neg/pos = 185/176 | neg%=51.25%
+2025-12-20 02:32:47.599 | INFO     | __main__:sample_stat:86 - neg/pos = 363/361 | neg%=50.14%
+2025-12-20 02:32:49.823 | INFO     | __main__:run:301 - Start training Teacher-Gated + Distill (Seq student, MIDTI teacher)...
+2025-12-20 02:33:21.961 | INFO     | __main__:run:382 - epoch 1/100 | loss=0.7149 | auroc_train=0.6068 | auroc_val=0.5284 | auprc_val=0.5001 | f1_val=0.0833
+2025-12-20 02:33:21.990 | INFO     | __main__:run:401 - ✔ New BEST model saved (epoch=1, auprc=0.5001)
+2025-12-20 02:33:55.036 | INFO     | __main__:run:382 - epoch 2/100 | loss=0.6941 | auroc_train=0.4983 | auroc_val=0.5470 | auprc_val=0.5160 | f1_val=0.6555
+2025-12-20 02:33:55.053 | INFO     | __main__:run:401 - ✔ New BEST model saved (epoch=2, auprc=0.5160)
+2025-12-20 02:34:37.732 | INFO     | __main__:run:382 - epoch 3/100 | loss=0.6938 | auroc_train=0.5241 | auroc_val=0.5376 | auprc_val=0.5430 | f1_val=0.0000
+2025-12-20 02:34:37.762 | INFO     | __main__:run:401 - ✔ New BEST model saved (epoch=3, auprc=0.5430)
+2025-12-20 02:35:45.243 | INFO     | __main__:run:382 - epoch 4/100 | loss=0.6952 | auroc_train=0.5041 | auroc_val=0.5845 | auprc_val=0.5873 | f1_val=0.1592
+2025-12-20 02:35:45.275 | INFO     | __main__:run:401 - ✔ New BEST model saved (epoch=4, auprc=0.5873)
+2025-12-20 02:36:24.332 | INFO     | __main__:run:382 - epoch 5/100 | loss=0.6725 | auroc_train=0.6114 | auroc_val=0.6604 | auprc_val=0.6806 | f1_val=0.4762
+2025-12-20 02:36:24.364 | INFO     | __main__:run:401 - ✔ New BEST model saved (epoch=5, auprc=0.6806)
+2025-12-20 02:36:56.897 | INFO     | __main__:run:382 - epoch 6/100 | loss=0.6254 | auroc_train=0.7074 | auroc_val=0.7279 | auprc_val=0.7123 | f1_val=0.5303
+2025-12-20 02:36:56.930 | INFO     | __main__:run:401 - ✔ New BEST model saved (epoch=6, auprc=0.7123)
+2025-12-20 02:37:29.099 | INFO     | __main__:run:382 - epoch 7/100 | loss=0.5417 | auroc_train=0.8029 | auroc_val=0.8557 | auprc_val=0.8398 | f1_val=0.7389
+2025-12-20 02:37:29.126 | INFO     | __main__:run:401 - ✔ New BEST model saved (epoch=7, auprc=0.8398)
+2025-12-20 02:38:01.562 | INFO     | __main__:run:382 - epoch 8/100 | loss=0.4477 | auroc_train=0.8748 | auroc_val=0.8700 | auprc_val=0.8304 | f1_val=0.7884
+2025-12-20 02:38:01.562 | INFO     | __main__:run:404 - No improvement (1/100)
+2025-12-20 02:38:34.318 | INFO     | __main__:run:382 - epoch 9/100 | loss=0.4220 | auroc_train=0.8857 | auroc_val=0.8610 | auprc_val=0.8487 | f1_val=0.7389
+2025-12-20 02:38:34.345 | INFO     | __main__:run:401 - ✔ New BEST model saved (epoch=9, auprc=0.8487)
+2025-12-20 02:39:06.818 | INFO     | __main__:run:382 - epoch 10/100 | loss=0.3770 | auroc_train=0.9095 | auroc_val=0.8864 | auprc_val=0.8510 | f1_val=0.8070
+2025-12-20 02:39:06.853 | INFO     | __main__:run:401 - ✔ New BEST model saved (epoch=10, auprc=0.8510)
+2025-12-20 02:39:39.409 | INFO     | __main__:run:382 - epoch 11/100 | loss=0.3321 | auroc_train=0.9284 | auroc_val=0.8889 | auprc_val=0.8683 | f1_val=0.8215
+2025-12-20 02:39:39.433 | INFO     | __main__:run:401 - ✔ New BEST model saved (epoch=11, auprc=0.8683)
+2025-12-20 02:40:11.929 | INFO     | __main__:run:382 - epoch 12/100 | loss=0.3215 | auroc_train=0.9324 | auroc_val=0.8887 | auprc_val=0.8652 | f1_val=0.8071
+2025-12-20 02:40:11.929 | INFO     | __main__:run:404 - No improvement (1/100)
+2025-12-20 02:40:45.435 | INFO     | __main__:run:382 - epoch 13/100 | loss=0.3164 | auroc_train=0.9347 | auroc_val=0.8900 | auprc_val=0.8641 | f1_val=0.8094
+2025-12-20 02:40:45.436 | INFO     | __main__:run:404 - No improvement (2/100)
+2025-12-20 02:41:19.273 | INFO     | __main__:run:382 - epoch 14/100 | loss=0.3124 | auroc_train=0.9355 | auroc_val=0.8904 | auprc_val=0.8599 | f1_val=0.8083
+2025-12-20 02:41:19.273 | INFO     | __main__:run:404 - No improvement (3/100)
+2025-12-20 02:41:54.146 | INFO     | __main__:run:382 - epoch 15/100 | loss=0.3104 | auroc_train=0.9389 | auroc_val=0.8904 | auprc_val=0.8616 | f1_val=0.8099
+2025-12-20 02:41:54.146 | INFO     | __main__:run:404 - No improvement (4/100)
+2025-12-20 02:42:30.327 | INFO     | __main__:run:382 - epoch 16/100 | loss=0.3096 | auroc_train=0.9389 | auroc_val=0.8910 | auprc_val=0.8572 | f1_val=0.8083
+2025-12-20 02:42:30.327 | INFO     | __main__:run:404 - No improvement (5/100)
+2025-12-20 02:43:09.394 | INFO     | __main__:run:382 - epoch 17/100 | loss=0.3013 | auroc_train=0.9422 | auroc_val=0.8908 | auprc_val=0.8613 | f1_val=0.8059
+2025-12-20 02:43:09.395 | INFO     | __main__:run:404 - No improvement (6/100)
+2025-12-20 02:43:48.050 | INFO     | __main__:run:382 - epoch 18/100 | loss=0.3119 | auroc_train=0.9440 | auroc_val=0.8912 | auprc_val=0.8557 | f1_val=0.8116
+2025-12-20 02:43:48.050 | INFO     | __main__:run:404 - No improvement (7/100)

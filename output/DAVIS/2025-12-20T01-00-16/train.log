@@ -1,0 +1,52 @@
+2025-12-20 01:00:16.230 | INFO     | __main__:sample_stat:86 - neg/pos = 23964/1808 | neg%=92.98%
+2025-12-20 01:00:16.233 | INFO     | __main__:sample_stat:86 - neg/pos = 1808/1808 | neg%=50.00%
+2025-12-20 01:00:16.235 | INFO     | __main__:sample_stat:86 - neg/pos = 1260/1271 | neg%=49.78%
+2025-12-20 01:00:16.235 | INFO     | __main__:sample_stat:86 - neg/pos = 185/176 | neg%=51.25%
+2025-12-20 01:00:16.236 | INFO     | __main__:sample_stat:86 - neg/pos = 363/361 | neg%=50.14%
+2025-12-20 01:00:18.205 | INFO     | __main__:run:300 - Start training Teacher-Gated + Distill (Seq student, MIDTI teacher)...
+2025-12-20 01:02:55.831 | INFO     | __main__:run:361 - epoch 1/100 | loss=0.7614 | auroc_train=0.8663 | auroc_val=0.9364 | auprc_val=0.9458 | f1_val=0.9446
+2025-12-20 01:02:55.849 | INFO     | __main__:run:380 - ✔ New BEST model saved (epoch=1, auprc=0.9458)
+2025-12-20 01:05:43.316 | INFO     | __main__:run:361 - epoch 2/100 | loss=0.7716 | auroc_train=0.9559 | auroc_val=0.9468 | auprc_val=0.9538 | f1_val=0.9446
+2025-12-20 01:05:43.334 | INFO     | __main__:run:380 - ✔ New BEST model saved (epoch=2, auprc=0.9538)
+2025-12-20 01:08:34.816 | INFO     | __main__:run:361 - epoch 3/100 | loss=0.8030 | auroc_train=0.9551 | auroc_val=0.9458 | auprc_val=0.9449 | f1_val=0.9446
+2025-12-20 01:08:34.816 | INFO     | __main__:run:383 - No improvement (1/20)
+2025-12-20 01:11:25.069 | INFO     | __main__:run:361 - epoch 4/100 | loss=0.8572 | auroc_train=0.9402 | auroc_val=0.6138 | auprc_val=0.6285 | f1_val=0.6555
+2025-12-20 01:11:25.069 | INFO     | __main__:run:383 - No improvement (2/20)
+2025-12-20 01:14:07.409 | INFO     | __main__:run:361 - epoch 5/100 | loss=0.8035 | auroc_train=0.5269 | auroc_val=0.8986 | auprc_val=0.8606 | f1_val=0.2330
+2025-12-20 01:14:07.410 | INFO     | __main__:run:383 - No improvement (3/20)
+2025-12-20 01:16:58.693 | INFO     | __main__:run:361 - epoch 6/100 | loss=0.6092 | auroc_train=0.9307 | auroc_val=0.9433 | auprc_val=0.9480 | f1_val=0.9446
+2025-12-20 01:16:58.693 | INFO     | __main__:run:383 - No improvement (4/20)
+2025-12-20 01:19:51.805 | INFO     | __main__:run:361 - epoch 7/100 | loss=0.6326 | auroc_train=0.9588 | auroc_val=0.9313 | auprc_val=0.9067 | f1_val=0.9446
+2025-12-20 01:19:51.805 | INFO     | __main__:run:383 - No improvement (5/20)
+2025-12-20 01:22:45.256 | INFO     | __main__:run:361 - epoch 8/100 | loss=0.5048 | auroc_train=0.9520 | auroc_val=0.9303 | auprc_val=0.9088 | f1_val=0.9446
+2025-12-20 01:22:45.256 | INFO     | __main__:run:383 - No improvement (6/20)
+2025-12-20 01:25:39.475 | INFO     | __main__:run:361 - epoch 9/100 | loss=0.4322 | auroc_train=0.9551 | auroc_val=0.9329 | auprc_val=0.9006 | f1_val=0.9446
+2025-12-20 01:25:39.475 | INFO     | __main__:run:383 - No improvement (7/20)
+2025-12-20 01:28:34.256 | INFO     | __main__:run:361 - epoch 10/100 | loss=0.3788 | auroc_train=0.9583 | auroc_val=0.9350 | auprc_val=0.8901 | f1_val=0.9446
+2025-12-20 01:28:34.256 | INFO     | __main__:run:383 - No improvement (8/20)
+2025-12-20 01:31:28.719 | INFO     | __main__:run:361 - epoch 11/100 | loss=0.3370 | auroc_train=0.9605 | auroc_val=0.9353 | auprc_val=0.8865 | f1_val=0.9446
+2025-12-20 01:31:28.721 | INFO     | __main__:run:383 - No improvement (9/20)
+2025-12-20 01:34:26.664 | INFO     | __main__:run:361 - epoch 12/100 | loss=0.3287 | auroc_train=0.9606 | auroc_val=0.9360 | auprc_val=0.8860 | f1_val=0.9446
+2025-12-20 01:34:26.664 | INFO     | __main__:run:383 - No improvement (10/20)
+2025-12-20 01:37:24.348 | INFO     | __main__:run:361 - epoch 13/100 | loss=0.3239 | auroc_train=0.9612 | auroc_val=0.9364 | auprc_val=0.8870 | f1_val=0.9446
+2025-12-20 01:37:24.348 | INFO     | __main__:run:383 - No improvement (11/20)
+2025-12-20 01:40:12.960 | INFO     | __main__:run:361 - epoch 14/100 | loss=0.3200 | auroc_train=0.9613 | auroc_val=0.9368 | auprc_val=0.8882 | f1_val=0.9446
+2025-12-20 01:40:12.960 | INFO     | __main__:run:383 - No improvement (12/20)
+2025-12-20 01:43:05.319 | INFO     | __main__:run:361 - epoch 15/100 | loss=0.3150 | auroc_train=0.9628 | auroc_val=0.9373 | auprc_val=0.8882 | f1_val=0.9446
+2025-12-20 01:43:05.319 | INFO     | __main__:run:383 - No improvement (13/20)
+2025-12-20 01:46:01.413 | INFO     | __main__:run:361 - epoch 16/100 | loss=0.3109 | auroc_train=0.9636 | auroc_val=0.9376 | auprc_val=0.8887 | f1_val=0.9446
+2025-12-20 01:46:01.413 | INFO     | __main__:run:383 - No improvement (14/20)
+2025-12-20 01:48:57.817 | INFO     | __main__:run:361 - epoch 17/100 | loss=0.3096 | auroc_train=0.9640 | auroc_val=0.9376 | auprc_val=0.8889 | f1_val=0.9446
+2025-12-20 01:48:57.818 | INFO     | __main__:run:383 - No improvement (15/20)
+2025-12-20 01:51:55.533 | INFO     | __main__:run:361 - epoch 18/100 | loss=0.3046 | auroc_train=0.9642 | auroc_val=0.9386 | auprc_val=0.8890 | f1_val=0.9446
+2025-12-20 01:51:55.533 | INFO     | __main__:run:383 - No improvement (16/20)
+2025-12-20 01:55:06.395 | INFO     | __main__:run:361 - epoch 19/100 | loss=0.3020 | auroc_train=0.9642 | auroc_val=0.9388 | auprc_val=0.8879 | f1_val=0.9446
+2025-12-20 01:55:06.395 | INFO     | __main__:run:383 - No improvement (17/20)
+2025-12-20 01:58:31.929 | INFO     | __main__:run:361 - epoch 20/100 | loss=0.2976 | auroc_train=0.9648 | auroc_val=0.9393 | auprc_val=0.8883 | f1_val=0.9446
+2025-12-20 01:58:31.929 | INFO     | __main__:run:383 - No improvement (18/20)
+2025-12-20 02:02:02.576 | INFO     | __main__:run:361 - epoch 21/100 | loss=0.2930 | auroc_train=0.9657 | auroc_val=0.9391 | auprc_val=0.8889 | f1_val=0.9446
+2025-12-20 02:02:02.576 | INFO     | __main__:run:383 - No improvement (19/20)
+2025-12-20 02:05:29.968 | INFO     | __main__:run:361 - epoch 22/100 | loss=0.2928 | auroc_train=0.9654 | auroc_val=0.9391 | auprc_val=0.8889 | f1_val=0.9446
+2025-12-20 02:05:29.968 | INFO     | __main__:run:383 - No improvement (20/20)
+2025-12-20 02:05:29.968 | WARNING  | __main__:run:386 - Early stopping triggered!
+2025-12-20 02:05:29.999 | INFO     | __main__:run:398 - Saved: C:\Users\dgx38\PycharmProjects\PythonProject1\output\models\teacher_gated_DAVIS_e100.pt | total_time=3911.79s

@@ -1,0 +1,12 @@
+2025-12-19 22:43:15.001 | INFO     | __main__:sample_stat:82 - neg/pos = 23964/1808 | neg%=92.98%
+2025-12-19 22:43:15.011 | INFO     | __main__:sample_stat:82 - neg/pos = 1808/1808 | neg%=50.00%
+2025-12-19 22:43:15.011 | INFO     | __main__:sample_stat:82 - neg/pos = 1260/1271 | neg%=49.78%
+2025-12-19 22:43:15.016 | INFO     | __main__:sample_stat:82 - neg/pos = 185/176 | neg%=51.25%
+2025-12-19 22:43:15.016 | INFO     | __main__:sample_stat:82 - neg/pos = 363/361 | neg%=50.14%
+2025-12-19 22:43:19.177 | INFO     | __main__:run:287 - Start training Teacher-Gated + Distill (Seq student, MIDTI teacher)...
+2025-12-19 22:50:31.228 | INFO     | __main__:run:348 - epoch 1/5 | loss=1.0860 | auroc_train=0.9474 | auroc_val=0.9403 | auprc_val=0.9034 | f1_val=0.9433
+2025-12-19 22:56:37.652 | INFO     | __main__:run:348 - epoch 2/5 | loss=1.1939 | auroc_train=0.9521 | auroc_val=0.9422 | auprc_val=0.9212 | f1_val=0.9433
+2025-12-19 23:04:08.895 | INFO     | __main__:run:348 - epoch 3/5 | loss=1.2117 | auroc_train=0.9518 | auroc_val=0.9442 | auprc_val=0.9366 | f1_val=0.9433
+2025-12-19 23:08:20.509 | INFO     | __main__:run:348 - epoch 4/5 | loss=0.9475 | auroc_train=0.6331 | auroc_val=0.5118 | auprc_val=0.5237 | f1_val=0.0000
+2025-12-19 23:12:26.578 | INFO     | __main__:run:348 - epoch 5/5 | loss=0.6946 | auroc_train=0.4865 | auroc_val=0.6021 | auprc_val=0.6001 | f1_val=0.6565
+2025-12-19 23:12:26.628 | INFO     | __main__:run:363 - Saved: C:\Users\dgx38\PycharmProjects\PythonProject1\output\models\teacher_gated_DAVIS_e5.pt | total_time=1747.45s

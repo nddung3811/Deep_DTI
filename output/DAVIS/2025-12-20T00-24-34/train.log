@@ -1,0 +1,10 @@
+2025-12-20 00:24:34.562 | INFO     | __main__:sample_stat:86 - neg/pos = 23964/1808 | neg%=92.98%
+2025-12-20 00:24:34.566 | INFO     | __main__:sample_stat:86 - neg/pos = 1808/1808 | neg%=50.00%
+2025-12-20 00:24:34.567 | INFO     | __main__:sample_stat:86 - neg/pos = 1260/1271 | neg%=49.78%
+2025-12-20 00:24:34.567 | INFO     | __main__:sample_stat:86 - neg/pos = 185/176 | neg%=51.25%
+2025-12-20 00:24:34.568 | INFO     | __main__:sample_stat:86 - neg/pos = 363/361 | neg%=50.14%
+2025-12-20 00:24:36.584 | INFO     | __main__:run:300 - Start training Teacher-Gated + Distill (Seq student, MIDTI teacher)...
+2025-12-20 00:28:16.850 | INFO     | __main__:run:361 - epoch 1/50 | loss=1.0848 | auroc_train=0.9465 | auroc_val=0.9408 | auprc_val=0.9443 | f1_val=0.9446
+2025-12-20 00:28:16.885 | INFO     | __main__:run:380 - ✔ New BEST model saved (epoch=1, auprc=0.9443)
+2025-12-20 00:31:35.784 | INFO     | __main__:run:361 - epoch 2/50 | loss=1.1941 | auroc_train=0.9519 | auroc_val=0.9422 | auprc_val=0.9418 | f1_val=0.9446
+2025-12-20 00:31:35.786 | INFO     | __main__:run:383 - No improvement (1/5)
