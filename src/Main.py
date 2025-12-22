@@ -21,6 +21,14 @@ from .Utils import csv_record, check_dir, class_metrics, setup_seed, POS_LABEL, 
 from .midti import SimpleMIDTI, build_midti_graphs
 from .models.uncertainty_gate import UncertaintyGatedFusion
 
+def to_device(x, device):
+    if torch.is_tensor(x):
+        return x.to(device, non_blocking=True)
+    if isinstance(x, (list, tuple)):
+        return type(x)(to_device(t, device) for t in x)
+    if isinstance(x, dict):
+        return {k: to_device(v, device) for k, v in x.items()}
+    return x
 
 #  ĐỌC DATASET TỪ FILE CSV
 def load_local_dataset(name: str):
@@ -201,6 +209,9 @@ def calc_score(fusion_model, loader, device, graphs, feat_drug, feat_prot):
     y_true, y_score = [], []
 
     for v_d, v_p, y, d_idx, p_idx in tqdm(loader, desc="metrics"):
+        v_d = to_device(v_d, device)
+        v_p = to_device(v_p, device)
+
         d_idx = torch.as_tensor(d_idx, dtype=torch.long, device=device)
         p_idx = torch.as_tensor(p_idx, dtype=torch.long, device=device)
         y = torch.as_tensor(y, dtype=torch.float32, device=device)
@@ -247,6 +258,9 @@ def run(name="DAVIS", seed=10):
 
     # ---- siêu tham số ----
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    logger.info(f"Using device = {device}")
+    if device.type == "cuda":
+        logger.info(f"GPU = {torch.cuda.get_device_name(0)}")
     batch_size = 32
     epochs = 100
     lr = 5e-4
@@ -357,6 +371,7 @@ def run(name="DAVIS", seed=10):
 
     graphs = rebuild_graphs()
 
+
     # ---- train ----
     logger.info("Bắt đầu train Teacher-Gated + Distill (student=seq, teacher=MIDTI)...")
     t0 = time.time()
@@ -371,6 +386,28 @@ def run(name="DAVIS", seed=10):
 
         for bi, (v_d, v_p, y, d_idx, p_idx) in enumerate(tqdm(train_loader, desc=f"epoch {ep}")):
             optimizer.zero_grad()
+
+            v_d = to_device(v_d, device)
+            v_p = to_device(v_p, device)
+
+            if ep == 1 and bi == 0:
+                def first_tensor(x):
+                    if torch.is_tensor(x): return x
+                    if isinstance(x, (list, tuple)):
+                        for t in x:
+                            r = first_tensor(t)
+                            if r is not None: return r
+                    if isinstance(x, dict):
+                        for t in x.values():
+                            r = first_tensor(t)
+                            if r is not None: return r
+                    return None
+
+                td = first_tensor(v_d)
+                tp = first_tensor(v_p)
+                logger.info(f"first tensor v_d device: {td.device if td is not None else 'NONE'}")
+                logger.info(f"first tensor v_p device: {tp.device if tp is not None else 'NONE'}")
+                logger.info(f"fusion device: {next(fusion.parameters()).device}")
 
             d_idx = torch.as_tensor(d_idx, dtype=torch.long, device=device)
             p_idx = torch.as_tensor(p_idx, dtype=torch.long, device=device)
