@@ -52,17 +52,6 @@ def load_local_dataset(name: str):
 
 #  TẠO NHÃN NHỊ PHÂN (0/1)
 def make_binary_labels(df: pd.DataFrame, name: str):
-    """
-    Quy ước:
-      POS_LABEL = 1 (dương tính)
-      NEG_LABEL = 0 (âm tính)
-
-    - Nếu đã có cột 'Label' thì giữ nguyên.
-    - Nếu có cột 'Y' thì binarize theo rule từng dataset:
-        + DAVIS: pY = -log10(Kd * 1e-9), POS nếu pY >= 7.0
-        + BindingDB_Kd: POS nếu pY >= 7.6
-        + KIBA: POS nếu Y >= 12.1
-    """
     df = df.copy()
 
     if "Label" in df.columns:
@@ -72,26 +61,30 @@ def make_binary_labels(df: pd.DataFrame, name: str):
     if "Y" not in df.columns:
         raise ValueError("CSV cần có cột 'Label' hoặc 'Y'.")
 
-    y = pd.to_numeric(df["Y"], errors="coerce")
+    #  DROP NA TRƯỚC
     df = df.dropna(subset=["Drug_ID", "Target_ID", "Drug", "Target", "Y"])
 
+    #  LẤY y SAU KHI DROP
+    y = pd.to_numeric(df["Y"], errors="coerce").values.astype(float)
+
     if name.upper() == "DAVIS":
-        pY = -np.log10(y.values.astype(float) * 1e-9 + 1e-12)
+        pY = -np.log10(y * 1e-9 + 1e-12)
         df["pY"] = pY
-        df["Label"] = np.where(df["pY"] >= 7.0, POS_LABEL, NEG_LABEL).astype(int)
+        df["Label"] = (df["pY"] >= 7.0).astype(int)
 
     elif name == "BindingDB_Kd":
-        pY = -np.log10(y.values.astype(float) * 1e-9 + 1e-12)
+        pY = -np.log10(y * 1e-9 + 1e-12)
         df["pY"] = pY
-        df["Label"] = np.where(df["pY"] >= 7.6, POS_LABEL, NEG_LABEL).astype(int)
+        df["Label"] = (df["pY"] >= 7.6).astype(int)
 
     elif name.upper() == "KIBA":
-        df["Label"] = np.where(y.values.astype(float) >= 12.1, POS_LABEL, NEG_LABEL).astype(int)
+        df["Label"] = (y >= 12.1).astype(int)
 
     else:
         raise ValueError(f"Dataset chưa hỗ trợ rule binarize: {name}")
 
     return df
+
 
 
 def sample_stat(df: pd.DataFrame):
@@ -239,6 +232,49 @@ def calc_score(fusion_model, loader, device, graphs, feat_drug, feat_prot):
     m["auroc"] = float(auroc)
     m["auprc"] = float(auprc)
     return m
+@torch.no_grad()
+def export_test_csv(
+    fusion_model,
+    loader,
+    device,
+    graphs,
+    feat_drug,
+    feat_prot,
+    save_path
+):
+    fusion_model.eval()
+
+    rows = []
+
+    for v_d, v_p, y, d_idx, p_idx in tqdm(loader, desc="export test csv"):
+        v_d = to_device(v_d, device)
+        v_p = to_device(v_p, device)
+        d_idx = torch.as_tensor(d_idx, dtype=torch.long, device=device)
+        p_idx = torch.as_tensor(p_idx, dtype=torch.long, device=device)
+        y = torch.as_tensor(y, dtype=torch.float32, device=device)
+
+        logit, logit_s, logit_t, w, u_s, u_t = fusion_model(
+            v_d, v_p, d_idx, p_idx, graphs, feat_drug, feat_prot,
+            enable_mc=False
+        )
+
+        prob_f = torch.sigmoid(logit)
+        prob_s = torch.sigmoid(logit_s)
+        prob_t = torch.sigmoid(logit_t)
+
+        for i in range(len(y)):
+            rows.append({
+                "Drug_ID": int(d_idx[i].cpu()),
+                "Target_ID": int(p_idx[i].cpu()),
+                "Label": int(y[i].cpu()),
+                "Student": float(prob_s[i].cpu()),
+                "Teacher": float(prob_t[i].cpu()),
+                "Fusion": float(prob_f[i].cpu()),
+            })
+
+    df = pd.DataFrame(rows)
+    df.to_csv(save_path, index=False)
+    print(f"✔ Test CSV saved to {save_path}")
 
 
 #  HÀM CHẠY CHÍNH
@@ -494,9 +530,31 @@ def run(name="DAVIS", seed=10):
         "dim": dim
     }, ckpt)
     logger.info(f"Đã lưu: {ckpt} | total_time={time.time()-t0:.2f}s")
+    # ---- load best model ----
+    payload = torch.load(best_ckpt, map_location=device)
+    fusion.load_state_dict(payload["fusion"])
+    feat_drug.data = payload["feat_drug"].to(device)
+    feat_prot.data = payload["feat_prot"].to(device)
+    graphs = rebuild_graphs()
+
+    # ---- export test csv ----
+    export_test_csv(
+        fusion_model=fusion,
+        loader=test_loader,
+        device=device,
+        graphs=graphs,
+        feat_drug=feat_drug,
+        feat_prot=feat_prot,
+        save_path=os.path.join(out_root, "test_predictions.csv")
+    )
+        
 
     logger.remove(log_fd)
 
 
 if __name__ == "__main__":
+    run("BindingDB_Kd")
     run("DAVIS")
+    run("KIBA")
+    
+    

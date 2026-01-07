@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f18dbd81-e44a-46d5-bf2d-493b0918cf7d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/PythonProject1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PythonProject1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/models/teacher_gated_DAVIS_best.pt" beforeDir="false" afterPath="$PROJECT_DIR$/output/models/teacher_gated_DAVIS_best.pt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HDN.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/HDN.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/models/teacher_gated_DAVIS_e100.pt" beforeDir="false" afterPath="$PROJECT_DIR$/output/models/teacher_gated_DAVIS_e100.pt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/midti/builders.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/midti/builders.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/midti/interaction_gnn.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/midti/interaction_gnn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/midti/layers.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/midti/layers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/uncertainty_gate.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/uncertainty_gate.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,23 +19,24 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="375hc0nPfCz3b2APzCWjgTT4CMo" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/dgx38/PycharmProjects/PythonProject1"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/dgx38/PycharmProjects/PythonProject1&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\dgx38\PycharmProjects\PythonProject1\data" />
@@ -138,7 +134,6 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/Main.py</url>
-          <line>1</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
