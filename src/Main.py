@@ -555,6 +555,6 @@ def run(name="DAVIS", seed=10):
 if __name__ == "__main__":
     run("BindingDB_Kd")
     run("DAVIS")
-    run("KIBA")
+    #run("KIBA")
     
     
